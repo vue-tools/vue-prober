@@ -3,7 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Version = require('./version');
+
+var _version = require('./version');
+
+var _version2 = _interopRequireDefault(_version);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var browser = void 0,
     matched = void 0,
@@ -15,23 +20,23 @@ if (matched = ua.match(/(?:UCWEB|UCBrowser\/)([\d\.]+)/)) {
     browser = {
         name: 'UC',
         isUC: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 } else if (matched = ua.match(/MQQBrowser\/([\d\.]+)/)) {
     browser = {
         name: 'QQ',
         isQQ: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 } else if (matched = ua.match(/(?:Firefox|FxiOS)\/([\d\.]+)/)) {
     browser = {
         name: 'Firefox',
         isFirefox: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 } else if ((matched = ua.match(/MSIE\s([\d\.]+)/)) || (matched = ua.match(/IEMobile\/([\d\.]+)/))) {
     browser = {
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 
     if (ua.match(/IEMobile/)) {
@@ -49,7 +54,7 @@ if (matched = ua.match(/(?:UCWEB|UCBrowser\/)([\d\.]+)/)) {
     browser = {
         name: 'Chrome',
         isChrome: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 
     if (ua.match(/Version\/[\d+\.]+\s*Chrome/)) {
@@ -60,20 +65,20 @@ if (matched = ua.match(/(?:UCWEB|UCBrowser\/)([\d\.]+)/)) {
     browser = {
         name: 'Android',
         isAndroid: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 } else if (ua.match(/iPhone|iPad|iPod/)) {
     if (ua.match(/Safari/) && (matched = ua.match(/Version\/([\d\.]+)/))) {
         browser = {
             name: 'Safari',
             isSafari: true,
-            version: new Version(matched[1])
+            version: new _version2.default(matched[1])
         };
     } else if (matched = ua.match(/OS ([\d_\.]+) like Mac OS X/)) {
         browser = {
             name: 'iOS Webview',
             isWebview: true,
-            version: new Version(matched[1].replace(/\_/g, '.'))
+            version: new _version2.default(matched[1].replace(/\_/g, '.'))
         };
     }
 }
@@ -81,7 +86,7 @@ if (matched = ua.match(/(?:UCWEB|UCBrowser\/)([\d\.]+)/)) {
 if (!browser) {
     browser = {
         name: 'unknown',
-        version: new Version('0.0.0')
+        version: new _version2.default('0.0.0')
     };
 }
 

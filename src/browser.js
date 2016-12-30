@@ -1,4 +1,4 @@
-let Version = require('./version')
+import Version from './version'
 
 let browser, matched, ua
 

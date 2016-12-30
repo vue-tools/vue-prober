@@ -3,23 +3,28 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _version = require('./version');
+
+var _version2 = _interopRequireDefault(_version);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var os = void 0,
     matched = void 0,
-    ua = void 0,
-    Version = void 0;
+    ua = void 0;
 
-Version = require('./version');
 ua = window.navigator.userAgent;
 
 if (matched = ua.match(/Windows\sPhone\s(?:OS\s)?([\d\.]+)/)) {
     os = {
         name: 'Windows Phone',
         isWindowsPhone: true,
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 } else if (!!ua.match(/Safari/) && (matched = ua.match(/Android[\s\/]([\d\.]+)/))) {
     os = {
-        version: new Version(matched[1])
+        version: new _version2.default(matched[1])
     };
 
     if (ua.match(/Mobile\s+Safari/)) {
@@ -38,7 +43,7 @@ if (matched = ua.match(/Windows\sPhone\s(?:OS\s)?([\d\.]+)/)) {
             isIPhone: name === 'iPhone' || name === 'iPod',
             isIPad: name === 'iPad',
             isIOS: true,
-            version: new Version(matched[1].split('_').join('.'))
+            version: new _version2.default(matched[1].split('_').join('.'))
         };
     }
 }
@@ -46,7 +51,7 @@ if (matched = ua.match(/Windows\sPhone\s(?:OS\s)?([\d\.]+)/)) {
 if (!os) {
     os = {
         name: 'unknown',
-        version: new Version('0.0.0')
+        version: new _version2.default('0.0.0')
     };
 }
 

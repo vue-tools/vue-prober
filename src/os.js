@@ -1,6 +1,7 @@
-let os, matched, ua, Version
+import Version from './version'
 
-Version = require('./version')
+let os, matched, ua
+
 ua = window.navigator.userAgent
 
 if ((matched = ua.match(/Windows\sPhone\s(?:OS\s)?([\d\.]+)/))) {
