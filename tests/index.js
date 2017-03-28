@@ -341,8 +341,8 @@ describe('os', () => {
     const AndroidPadUA = 'Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Safari/537.36'
     const iPhoneUA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'
     const KindleUA = 'Mozilla/5.0 (Linux; U; en-us; KFAPWI Build/JDQ39) AppleWebKit/535.19 (KHTML, like Gecko) Silk/3.13 Safari/535.19 Silk-Accelerated=true'
-    const AndroidUA = 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36'
-
+    const AndroidUA = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G9250 Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043115 Safari/537.36 MicroMessenger/6.5.4.1000 NetType/WIFI Language/zh_CN'
+    
     describe('android', () => {
         let os
 
@@ -364,7 +364,7 @@ describe('os', () => {
         it('correct', () => {
             expect(os.isAndroid).to.be.true
             expect(os.name).to.be.equal('Android')
-            expect(os.version.eq('5.0')).to.be.true
+            expect(os.version.eq('6.0.1')).to.be.true
             expect(window.navigator.userAgent).to.be.equal(AndroidUA)
         })
     })

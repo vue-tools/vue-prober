@@ -15,7 +15,7 @@ if ((matched = ua.match(/Windows\sPhone\s(?:OS\s)?([\d\.]+)/))) {
         version: new Version(matched[1])
     }
     
-    if (ua.match(/Mobile\s+Safari/)) {
+    if (ua.match(/Mobile.+Safari/)) {
         os.name = 'Android'
         os.isAndroid = true
     } else {

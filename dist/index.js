@@ -34,8 +34,4 @@ function plugin(Vue) {
     Vue.prototype.$env = env;
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(plugin);
-}
-
 exports.default = plugin;
